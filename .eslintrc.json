@@ -13,9 +13,27 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "sourceTag": "app",
+                "onlyDependOnLibsWithTags": ["feature", "ui", "domain", "util"]
+              },
+              {
+                "sourceTag": "feature",
+                "onlyDependOnLibsWithTags": ["ui", "domain", "util"]
+              },
+              {
+                "sourceTag": "ui",
+                "onlyDependOnLibsWithTags": ["domain", "util"]
+              },
+              {
+                "sourceTag": "domain",
+                "onlyDependOnLibsWithTags": ["util"]
+              },
+              {
+                "sourceTag": "util",
+                "onlyDependOnLibsWithTags": [""]
               }
+
+
             ]
           }
         ]

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import {
   Component as NgComponent,
   Directive as NgDirective,

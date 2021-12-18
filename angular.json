@@ -100,7 +100,7 @@
           }
         }
       },
-      "tags": []
+      "tags": ["app"]
     },
     "demo-e2e": {
       "root": "apps/demo-e2e",
@@ -154,7 +154,7 @@
           }
         }
       },
-      "tags": []
+      "tags": ["domain"]
     },
     "feature-booking": {
       "projectType": "library",
@@ -180,19 +180,19 @@
           }
         }
       },
-      "tags": []
+      "tags": ["feature"]
     },
-    "shim": {
+    "ui-city": {
       "projectType": "library",
-      "root": "libs/shim",
-      "sourceRoot": "libs/shim/src",
+      "root": "libs/ui-city",
+      "sourceRoot": "libs/ui-city/src",
       "prefix": "demo",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shim"],
+          "outputs": ["coverage/libs/ui-city"],
           "options": {
-            "jestConfig": "libs/shim/jest.config.js",
+            "jestConfig": "libs/ui-city/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -200,13 +200,13 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/shim/src/**/*.ts",
-              "libs/shim/src/**/*.html"
+              "libs/ui-city/src/**/*.ts",
+              "libs/ui-city/src/**/*.html"
             ]
           }
         }
       },
-      "tags": []
+      "tags": ["ui"]
     },
     "ui-shell": {
       "projectType": "library",
@@ -232,19 +232,19 @@
           }
         }
       },
-      "tags": []
+      "tags": ["ui"]
     },
-    "util-city": {
+    "util-shim": {
       "projectType": "library",
-      "root": "libs/util-city",
-      "sourceRoot": "libs/util-city/src",
+      "root": "libs/util-shim",
+      "sourceRoot": "libs/util-shim/src",
       "prefix": "demo",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/util-city"],
+          "outputs": ["coverage/libs/util-shim"],
           "options": {
-            "jestConfig": "libs/util-city/jest.config.js",
+            "jestConfig": "libs/util-shim/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -252,13 +252,13 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/util-city/src/**/*.ts",
-              "libs/util-city/src/**/*.html"
+              "libs/util-shim/src/**/*.ts",
+              "libs/util-shim/src/**/*.html"
             ]
           }
         }
       },
-      "tags": []
+      "tags": ["util"]
     }
   }
 }

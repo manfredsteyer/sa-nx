@@ -1,39 +1,32 @@
-import { CommonModule } from "@angular/common";
-import { Inject } from "@angular/core";
-import { FormsModule } from "@angular/forms";
-import { CityValidator } from "@demo/util-city";
-import { FlightCardComponent } from "../flight-card/flight-card.component";
-import { FlightService } from "@demo/domain-booking";
-import { Component } from "@demo/shim";
+import { CommonModule } from '@angular/common';
+import { Inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CityValidator } from '@demo/ui-city';
+import { FlightCardComponent } from '../flight-card/flight-card.component';
+import { FlightService } from '@demo/domain-booking';
+import { Component } from '@demo/util-shim';
 
 @Component({
   standalone: true,
-  imports: [
-    CommonModule, 
-    FormsModule, 
-    FlightCardComponent,
-    CityValidator,
-  ],
+  imports: [CommonModule, FormsModule, FlightCardComponent, CityValidator],
   // providers: [FlightService],
-  template: require('./flight-search.component.html')
+  template: require('./flight-search.component.html'),
 })
 export class FlightSearchComponent {
-
   from = 'Hamburg'; // in Germany
   to = 'Graz'; // in Austria
   urgent = false;
-  
+
   get flights() {
     return this.flightService.flights;
   }
 
   basket: { [id: number]: boolean } = {
     3: true,
-    5: true
+    5: true,
   };
 
-  constructor(@Inject(FlightService) private flightService: FlightService) {
-  }
+  constructor(@Inject(FlightService) private flightService: FlightService) {}
 
   search(): void {
     if (!this.from || !this.to) return;
@@ -44,6 +37,4 @@ export class FlightSearchComponent {
   delay(): void {
     this.flightService.delay();
   }
-
 }
-

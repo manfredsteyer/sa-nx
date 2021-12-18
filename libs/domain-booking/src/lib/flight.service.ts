@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Flight } from './flight';
 
+// import { NavbarComponent } from '@demo/ui-shell';
+
 @Injectable({
   providedIn: 'root'
 })

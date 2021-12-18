@@ -18,9 +18,9 @@
     "paths": {
       "@demo/domain-booking": ["libs/domain-booking/src/index.ts"],
       "@demo/feature-booking": ["libs/feature-booking/src/index.ts"],
-      "@demo/shim": ["libs/shim/src/index.ts"],
+      "@demo/ui-city": ["libs/ui-city/src/index.ts"],
       "@demo/ui-shell": ["libs/ui-shell/src/index.ts"],
-      "@demo/util-city": ["libs/util-city/src/index.ts"]
+      "@demo/util-shim": ["libs/util-shim/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

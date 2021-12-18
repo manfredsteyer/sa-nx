@@ -1,9 +1,9 @@
-import { CommonModule } from "@angular/common";
-import { EventEmitter, Input, Output } from "@angular/core";
-import { RouterModule } from "@angular/router";
-import { CityPipe } from "@demo/util-city";
-import { Flight } from "@demo/domain-booking";
-import { Component } from "@demo/shim";
+import { CommonModule } from '@angular/common';
+import { EventEmitter, Input, Output } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { CityPipe } from '@demo/ui-city';
+import { Flight } from '@demo/domain-booking';
+import { Component } from '@demo/util-shim';
 
 @Component({
   standalone: true,
@@ -12,7 +12,6 @@ import { Component } from "@demo/shim";
   template: require('./flight-card.component.html'),
 })
 export class FlightCardComponent {
-  
   @Input() item: Flight | undefined;
   @Input() selected: boolean | undefined;
   @Output() selectedChange = new EventEmitter<boolean>();

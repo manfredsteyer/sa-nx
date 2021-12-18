@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'shim',
+  displayName: 'ui-city',
   preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/libs/shim',
+  coverageDirectory: '../../coverage/libs/ui-city',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

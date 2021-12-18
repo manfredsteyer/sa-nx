@@ -1,7 +1,7 @@
-# util-city
+# util-shim
 
 This library was generated with [Nx](https://nx.dev).
 
 ## Running unit tests
 
-Run `nx test util-city` to execute the unit tests.
+Run `nx test util-shim` to execute the unit tests.

@@ -1,8 +1,7 @@
-import { Component } from "@demo/shim";
+import { Component } from '@demo/util-shim';
 
 @Component({
   standalone: true,
-  template: require('./about.component.html')
+  template: require('./about.component.html'),
 })
-export class AboutComponent {
-}
+export class AboutComponent {}

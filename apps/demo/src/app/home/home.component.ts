@@ -1,9 +1,7 @@
-import { Component } from "@demo/shim";
+import { Component } from '@demo/util-shim';
 
 @Component({
   standalone: true,
-  template: require('./home.component.html')
+  template: require('./home.component.html'),
 })
-export class HomeComponent {
-  constructor() { }
-}
+export class HomeComponent {}

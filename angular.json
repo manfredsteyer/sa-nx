@@ -8,7 +8,7 @@
       "prefix": "demo",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@nrwl/angular:webpack-browser",
           "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/demo",
@@ -17,8 +17,15 @@
             "polyfills": "apps/demo/src/polyfills.ts",
             "tsConfig": "apps/demo/tsconfig.app.json",
             "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
-            "styles": ["apps/demo/src/styles.css"],
-            "scripts": []
+            "styles": [
+              "node_modules/@angular-architects/paper-design/assets/css/bootstrap.css",
+              "node_modules/@angular-architects/paper-design/assets/scss/paper-dashboard.scss",
+              "apps/demo/src/styles.css"
+            ],
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "webpack.conf.js"
+            }
           },
           "configurations": {
             "production": {
@@ -40,9 +47,13 @@
                   "with": "apps/demo/src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "customWebpackConfig": {
+                "path": "webpack.conf.js"
+              }
             },
             "development": {
+              "aot": false,
               "buildOptimizer": false,
               "optimization": false,
               "vendorChunk": true,
@@ -54,7 +65,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@nrwl/angular:webpack-server",
           "configurations": {
             "production": {
               "browserTarget": "demo:build:production"
@@ -118,6 +129,136 @@
       },
       "tags": [],
       "implicitDependencies": ["demo"]
+    },
+    "domain-booking": {
+      "projectType": "library",
+      "root": "libs/domain-booking",
+      "sourceRoot": "libs/domain-booking/src",
+      "prefix": "demo",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/domain-booking"],
+          "options": {
+            "jestConfig": "libs/domain-booking/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/domain-booking/src/**/*.ts",
+              "libs/domain-booking/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "feature-booking": {
+      "projectType": "library",
+      "root": "libs/feature-booking",
+      "sourceRoot": "libs/feature-booking/src",
+      "prefix": "demo",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/feature-booking"],
+          "options": {
+            "jestConfig": "libs/feature-booking/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/feature-booking/src/**/*.ts",
+              "libs/feature-booking/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "shim": {
+      "projectType": "library",
+      "root": "libs/shim",
+      "sourceRoot": "libs/shim/src",
+      "prefix": "demo",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shim"],
+          "options": {
+            "jestConfig": "libs/shim/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shim/src/**/*.ts",
+              "libs/shim/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "ui-shell": {
+      "projectType": "library",
+      "root": "libs/ui-shell",
+      "sourceRoot": "libs/ui-shell/src",
+      "prefix": "demo",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-shell"],
+          "options": {
+            "jestConfig": "libs/ui-shell/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-shell/src/**/*.ts",
+              "libs/ui-shell/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "util-city": {
+      "projectType": "library",
+      "root": "libs/util-city",
+      "sourceRoot": "libs/util-city/src",
+      "prefix": "demo",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/util-city"],
+          "options": {
+            "jestConfig": "libs/util-city/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/util-city/src/**/*.ts",
+              "libs/util-city/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
     }
   }
 }

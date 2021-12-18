@@ -8,13 +8,20 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2015",
+    "target": "esnext",
     "module": "esnext",
+    "types": ["node"],
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@demo/domain-booking": ["libs/domain-booking/src/index.ts"],
+      "@demo/feature-booking": ["libs/feature-booking/src/index.ts"],
+      "@demo/shim": ["libs/shim/src/index.ts"],
+      "@demo/ui-shell": ["libs/ui-shell/src/index.ts"],
+      "@demo/util-city": ["libs/util-city/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

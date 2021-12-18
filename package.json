@@ -11,6 +11,8 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-architects/module-federation": "^13.0.1",
+    "@angular-architects/paper-design": "^1.0.2",
     "@angular/animations": "~13.1.0",
     "@angular/common": "~13.1.0",
     "@angular/compiler": "~13.1.0",
@@ -20,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "@nrwl/angular": "13.3.9",
+    "html-loader": "^3.0.1",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
@@ -40,7 +43,7 @@
     "@nrwl/tao": "13.3.9",
     "@nrwl/workspace": "13.3.9",
     "@types/jest": "27.0.2",
-    "@types/node": "14.14.33",
+    "@types/node": "^14.14.33",
     "@typescript-eslint/eslint-plugin": "~5.3.0",
     "@typescript-eslint/parser": "~5.3.0",
     "cypress": "^9.1.0",

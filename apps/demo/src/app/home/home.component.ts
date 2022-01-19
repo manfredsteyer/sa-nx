@@ -1,4 +1,4 @@
-import { Component } from '@demo/util-shim';
+import { Component } from '@demo/shared-util-shim';
 
 @Component({
   standalone: true,

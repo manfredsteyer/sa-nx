@@ -1,6 +1,84 @@
 {
   "version": 1,
   "projects": {
+    "booking-domain": {
+      "projectType": "library",
+      "root": "libs/booking/domain",
+      "sourceRoot": "libs/booking/domain/src",
+      "prefix": "demo",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/booking/domain"],
+          "options": {
+            "jestConfig": "libs/booking/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/booking/domain/src/**/*.ts",
+              "libs/booking/domain/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["domain"]
+    },
+    "booking-feature-search": {
+      "projectType": "library",
+      "root": "libs/booking/feature-search",
+      "sourceRoot": "libs/booking/feature-search/src",
+      "prefix": "demo",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/booking/feature-search"],
+          "options": {
+            "jestConfig": "libs/booking/feature-search/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/booking/feature-search/src/**/*.ts",
+              "libs/booking/feature-search/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["feature"]
+    },
+    "booking-ui-city": {
+      "projectType": "library",
+      "root": "libs/booking/ui-city",
+      "sourceRoot": "libs/booking/ui-city/src",
+      "prefix": "demo",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/booking/ui-city"],
+          "options": {
+            "jestConfig": "libs/booking/ui-city/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/booking/ui-city/src/**/*.ts",
+              "libs/booking/ui-city/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": ["ui"]
+    },
     "demo": {
       "projectType": "application",
       "root": "apps/demo",
@@ -130,17 +208,17 @@
       "tags": [],
       "implicitDependencies": ["demo"]
     },
-    "domain-booking": {
+    "shared-ui-shell": {
       "projectType": "library",
-      "root": "libs/domain-booking",
-      "sourceRoot": "libs/domain-booking/src",
+      "root": "libs/shared/ui-shell",
+      "sourceRoot": "libs/shared/ui-shell/src",
       "prefix": "demo",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/domain-booking"],
+          "outputs": ["coverage/libs/shared/ui-shell"],
           "options": {
-            "jestConfig": "libs/domain-booking/jest.config.js",
+            "jestConfig": "libs/shared/ui-shell/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -148,77 +226,25 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/domain-booking/src/**/*.ts",
-              "libs/domain-booking/src/**/*.html"
-            ]
-          }
-        }
-      },
-      "tags": ["domain"]
-    },
-    "feature-booking": {
-      "projectType": "library",
-      "root": "libs/feature-booking",
-      "sourceRoot": "libs/feature-booking/src",
-      "prefix": "demo",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/feature-booking"],
-          "options": {
-            "jestConfig": "libs/feature-booking/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/feature-booking/src/**/*.ts",
-              "libs/feature-booking/src/**/*.html"
-            ]
-          }
-        }
-      },
-      "tags": ["feature"]
-    },
-    "ui-city": {
-      "projectType": "library",
-      "root": "libs/ui-city",
-      "sourceRoot": "libs/ui-city/src",
-      "prefix": "demo",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui-city"],
-          "options": {
-            "jestConfig": "libs/ui-city/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ui-city/src/**/*.ts",
-              "libs/ui-city/src/**/*.html"
+              "libs/shared/ui-shell/src/**/*.ts",
+              "libs/shared/ui-shell/src/**/*.html"
             ]
           }
         }
       },
       "tags": ["ui"]
     },
-    "ui-shell": {
+    "shared-util-shim": {
       "projectType": "library",
-      "root": "libs/ui-shell",
-      "sourceRoot": "libs/ui-shell/src",
+      "root": "libs/shared/util-shim",
+      "sourceRoot": "libs/shared/util-shim/src",
       "prefix": "demo",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui-shell"],
+          "outputs": ["coverage/libs/shared/util-shim"],
           "options": {
-            "jestConfig": "libs/ui-shell/jest.config.js",
+            "jestConfig": "libs/shared/util-shim/jest.config.js",
             "passWithNoTests": true
           }
         },
@@ -226,34 +252,8 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/ui-shell/src/**/*.ts",
-              "libs/ui-shell/src/**/*.html"
-            ]
-          }
-        }
-      },
-      "tags": ["ui"]
-    },
-    "util-shim": {
-      "projectType": "library",
-      "root": "libs/util-shim",
-      "sourceRoot": "libs/util-shim/src",
-      "prefix": "demo",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/util-shim"],
-          "options": {
-            "jestConfig": "libs/util-shim/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/util-shim/src/**/*.ts",
-              "libs/util-shim/src/**/*.html"
+              "libs/shared/util-shim/src/**/*.ts",
+              "libs/shared/util-shim/src/**/*.html"
             ]
           }
         }

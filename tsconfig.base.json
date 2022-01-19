@@ -16,11 +16,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@demo/domain-booking": ["libs/domain-booking/src/index.ts"],
-      "@demo/feature-booking": ["libs/feature-booking/src/index.ts"],
-      "@demo/ui-city": ["libs/ui-city/src/index.ts"],
-      "@demo/ui-shell": ["libs/ui-shell/src/index.ts"],
-      "@demo/util-shim": ["libs/util-shim/src/index.ts"]
+      "@demo/booking-domain": ["libs/booking/domain/src/index.ts"],
+      "@demo/booking-feature-search": [
+        "libs/booking/feature-search/src/index.ts"
+      ],
+      "@demo/booking-ui-city": ["libs/booking/ui-city/src/index.ts"],
+      "@demo/shared-ui-shell": ["libs/shared/ui-shell/src/index.ts"],
+      "@demo/shared-util-shim": ["libs/shared/util-shim/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

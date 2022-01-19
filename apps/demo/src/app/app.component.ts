@@ -5,8 +5,8 @@ import { HomeComponent } from './home/home.component';
 // import { all } from './utils';
 
 // Options for importing esm modules
-import { NavbarComponent, SidebarComponent } from '@demo/ui-shell';
-import { Component } from '@demo/util-shim';
+import { NavbarComponent, SidebarComponent } from '@demo/shared-ui-shell';
+import { Component } from '@demo/shared-util-shim';
 // import * as shell from '@demo/shell';
 // import * as shell from './shell';
 
@@ -40,7 +40,7 @@ import { Component } from '@demo/util-shim';
       {
         path: 'flight-booking',
         loadChildren: () =>
-          import('@demo/feature-booking').then(
+          import('@demo/booking-feature-search').then(
             (m) => m.FlightBookingComponent['module']
           ),
       },

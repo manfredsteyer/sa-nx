@@ -2,10 +2,11 @@ import { Component } from '@demo/shared-util-shim';
 
 import { FlightBookingComponent } from '@demo/booking-feature-search';
 
-console.log(FlightBookingComponent);
+// ng lint shared-ui-shell
 
 @Component({
   standalone: true,
+  imports: [FlightBookingComponent],
   selector: 'demo-navbar-cmp',
   // template: require('./navbar.component.html'),
 })
